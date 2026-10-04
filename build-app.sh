@@ -11,6 +11,7 @@ swift Assets/generate-icon.swift "$work/AppIcon.iconset"
 iconutil -c icns "$work/AppIcon.iconset" -o "$newapp/Contents/Resources/WordSelection.icns"
 cp .build/release/WordSelection "$newapp/Contents/MacOS/WordSelection"
 cp Info.plist "$newapp/Contents/Info.plist"
+cp LICENSE "$newapp/Contents/Resources/LICENSE"
 codesign --force --sign - "$newapp"
 if [ -d "$app" ]; then
     mv "$app" "$work/previous.app"

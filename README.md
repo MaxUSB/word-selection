@@ -22,4 +22,8 @@ Download the latest `WordSelection-macOS-AppleSilicon.zip` from [Releases](https
 
 WordSelection works in apps that allow it to adjust text selection. Some text fields do not, so they may continue to select words in their usual way.
 
+## License
+
+WordSelection is available under the [MIT License](LICENSE).
+
 [Русская версия](README.ru.md)
