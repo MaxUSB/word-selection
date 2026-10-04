@@ -1,0 +1,6 @@
+.DS_Store
+.build/
+.swiftpm/
+WordSelection.app/
+.WordSelection-build.*/
+*.xcuserstate

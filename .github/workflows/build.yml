@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+
+jobs:
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test word boundaries
+        run: swiftc Sources/WordBoundaries.swift Tests/main.swift -o /tmp/word-boundaries-test && /tmp/word-boundaries-test
+      - name: Build application
+        run: sh build-app.sh
+      - name: Validate bundle
+        run: codesign --verify --deep --strict WordSelection.app && plutil -lint WordSelection.app/Contents/Info.plist
